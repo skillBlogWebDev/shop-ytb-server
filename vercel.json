@@ -1,0 +1,30 @@
+{ 
+    "version": 2,
+    "env": {
+        "SQL_LOGGING": "true",
+        "SQL_DIALECT ": "mysql",
+        "DATABASE_HOST": "sql.freedb.tech",
+        "DATABASE_PORT": "3306",
+        "DATABASE_USER": "freedb_anton",
+        "DATABASE_PASSWORD": "htM!Tsmv2BQ**mV",
+        "DATABASE_NAME": "freedb_shop_youtube"
+    },
+    "builds": [
+        {
+            "src": "src/main.ts",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "src/main.ts",
+            "methods": [
+                "GET",
+                "POST",
+                "PUT",
+                "DELETE"
+            ]
+        }
+    ]
+}
